@@ -1,15 +1,18 @@
 import {Col} from "react-bootstrap"
+import { card } from "./Projects"
 
 export const ProjectCard1 = ({title, description, imgUrl}) => {
     return (
         <Col sm={6} md={4}>
-            <div className="proj-imgbx">
-                <img src={imgUrl} />
+            {card?.map((card) => (
+            <div key={card.projects1.title.toString()} className="proj-imgbx">
+                <img src={card.projects1.imgUrl} />
                 <div className="proj-txtx">
-                    <h4>{title}</h4>
-                    <span>{description}</span>
+                    <h4>{card.projects1.title}</h4>
+                    <span>{card.projects1.description}</span>
                 </div>
             </div>
+            ))}
         </Col>
     )
 }
