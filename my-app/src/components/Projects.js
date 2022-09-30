@@ -1,5 +1,5 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard1, ProjectCard2 } from "./ProjectCard";
+import { ProjectCard1, ProjectCard2, ProjectCard3 } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
@@ -133,10 +133,20 @@ export const Projects = () => {
                     {
                           projects1.map((project, index) => {
                             return (
-                                <ProjectCard1
-                                key={index}
-                                {...project}
-                                />
+                                // <ProjectCard1
+                                // key={index}
+                                // {...project}
+                                // />
+                              
+                              <Col sm={6} md={4}>
+                                <div key = {index}className="proj-imgbx">
+                                  <img src={project.imgUrl} />
+                                    <div className="proj-txtx">
+                                      <h4>{project.title}</h4>
+                                      <span>{project.description}</span>
+                                    </div>
+                                </div>
+                              </Col>
                             )
                           })
                         }
@@ -161,7 +171,7 @@ export const Projects = () => {
                     {
                           projects3.map((project, index) => {
                             return (
-                                <ProjectCard2
+                                <ProjectCard3
                                 key={index}
                                 {...project}
                                 />
